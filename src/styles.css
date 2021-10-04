@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+:root{
+  --width-hero-section: 1024.5px;
+  /* --bp-sm: 576px;
+  --bp-md: 768px;
+  --bp-lg: 992px; */
+  /* *Rango 0.25rem */
+  --font-size-body: .79rem;
+  --font-size-h1: 1.93rem;
+  --font-size-h2: 1.68rem;
+}
+@media screen and (min-width: 576px){
+  :root{
+    --font-size-body: .95rem;
+    --font-size-h1: 2.09rem;
+    --font-size-h2: 1.84rem;
+  }
+}
+@media screen and (min-width: 768px){
+  :root{
+    --font-size-body: 1rem;
+    --font-size-h1: 2.25rem;
+    --font-size-h2: 2rem;
+  }
+}
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: #FEFBF3;
+  font-family: 'Lobster', cursive;
+  font-size: var(--font-size-body);
+}
+
+.wedding{
+  display: flex;
+  position: relative;
+  height: 100vh;
+}
+
+.wedding::before{
+  position: absolute;
+  width: var(--width-hero-section);
+  height: 100%;
+  background-image: url('./../assets/images/hero-section.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: none;
+  transition: width 0.6s;
+}
+@media screen and (min-width: 576px){
+  .wedding::before{
+    content: '';
+  }
+}
+
+.wedding.is-active::before{
+  width: 50%;
+}
+
+.wedding__count-section{
+  display: none;
+  position: absolute;
+  align-items: flex-end;
+  justify-content: center;
+  width: var(--width-hero-section);
+  height: 100%;
+  transition: width 0.6s;
+}
+@media screen and (min-width: 576px){
+  .wedding__count-section{
+    display: flex;
+  }
+}
+
+.wedding__count-section-clock{
+  display: none;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 1rem;
+}
+@media screen and (min-width: 576px){
+  .wedding__count-section-clock{
+    display: flex;
+  }
+}
+
+.wedding__count-section-item{
+  --padding-childs: .3em 1.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  background: #adadad8c;
+}
+@media screen and (min-width: 768px){
+  .wedding__count-section-item{
+    width: 100px;
+    height: 100px;
+  }
+}
+@media screen and (min-width: 992px){
+  .wedding__count-section-item{
+    --padding-childs: .5em 1.5rem;
+    width: 130px;
+    height: 130px;
+  }
+}
+
+.wedding__count-section-subitem{
+  flex: 1;
+  width: 100%;
+  padding: var(--padding-childs);
+  background: #adadad8c;
+  font-size: var(--font-size-h1);
+  text-align: center;
+}
+
+.wedding__count-section-subitem--mod{
+  flex: 1;
+  width: 100%; 
+  padding: var(--padding-childs);
+  background: #9f72f98c;
+  text-align: center;
+}
+
+.wedding.is-active .wedding__count-section{
+  width: 50%;
+}
+
+.wedding__hero-section{
+  display: none;
+  flex: 1;
+}
+@media screen and (min-width: 576px){
+  .wedding__hero-section{
+    display: block;
+  }
+}
+
+.wedding__flipbook-section{
+  flex: 1;
+}
+
+.wedding__flipbook-section.is-mobile{
+  position: fixed;
+  top: 0;
+  right: 100vw;
+  width: 100%;
+  height: 100%;
+}
+
+.wedding__flipbook-content{
+  background-color: #FEFBF3;
+}
+
+.wedding__flipbook-paragraph{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
+}
+
+.flipbook, .flipbook .page{
+  width: 100%;
+  height: 100%;
+}
