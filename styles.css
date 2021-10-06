@@ -51,8 +51,8 @@ body{
   position: absolute;
   width: var(--width-hero-section);
   height: 100%;
-  background-image: url('./assets/images/hero-section.png');
-  background-position: center;
+  background-image: url('./assets/images/hero-section.jpg');
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   content: none;
@@ -103,6 +103,7 @@ body{
   width: 90px;
   height: 90px;
   background: #adadad8c;
+  border-radius: .25rem;
 }
 @media screen and (min-width: 768px){
   .wedding__count-section-item{
@@ -125,14 +126,19 @@ body{
   background: #adadad8c;
   font-size: var(--font-size-h1);
   text-align: center;
+  border-radius: .25rem .25rem 0 0;
 }
 
 .wedding__count-section-subitem--mod{
+  display: flex;
   flex: 1;
+  align-items: center;
+  justify-content: center;
   width: 100%; 
   padding: var(--padding-childs);
-  background: #9f72f98c;
+  background: #f9e2c2c2;
   text-align: center;
+  border-radius: 0 0 .25rem .25rem;
 }
 
 .wedding.is-active .wedding__count-section{
@@ -174,10 +180,23 @@ body{
   padding: 1rem;
 }
 
-.wedding_principal-section{
-  background-image: url('./assets/images/principal/principal.jpg');
-  background-size: cover;
+.wedding__content-background{
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wedding__principal-section {
+  background-image: url('./assets/images/principal/principal-desktop.jpg');
+}
+.wedding__principal-section.is-mobile {
+  background-image: url('./assets/images/principal/principal-mobile.jpg');
+}
+.wedding__reception-section.is-mobile {
+  background-image: url('./assets/images/reception/recepcion-mobile.jpg');
+}
+.wedding__godparents-section{
+  background-image: url('./assets/images/principal/principal-mobile.jpg');
 }
 /* END WEDDING CLASSES */
 /* INIT OVERRIDE NATIVES FLIPBOOK CLASSES */
