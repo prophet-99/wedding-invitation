@@ -1,10 +1,12 @@
-const flipbookInitializer = () => {
+const flipbookInitializer = (device) => {
   $('.flipbook').turn({
     gradients: true,
     when: {
       start: (event, pageObj) => {
-        const { page } = pageObj;
-        if (page === 2) event.preventDefault();
+        if (device === 'desktop'){
+          const { page } = pageObj;
+          if (page === 2) event.preventDefault();
+        }
       },
       turning: (event, page, view) => {
         if (page === 1){
