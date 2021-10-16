@@ -192,6 +192,9 @@ body{
 .wedding__principal-section.is-mobile {
   background-image: url('./assets/images/principal/principal-mobile.jpg');
 }
+.wedding__reception-section {
+  background-image: url('./assets/images/reception/recepcion-mobile.jpg');
+}
 .wedding__reception-section.is-mobile {
   background-image: url('./assets/images/reception/recepcion-mobile.jpg');
 }

@@ -26,7 +26,9 @@ const flipbookDesktopTemplate = () => (
       <div class="wedding__content-background wedding__principal-section"></div>
       <div class="wedding__content-background wedding__reception-section"></div>
       <div class="wedding__content-background wedding__godparents-section"></div>
-      <div class="wedding__content-background wedding__gifts-section"></div>
+      <div class="wedding__content-background wedding__godparents-section"></div>
+      <div class="wedding__content-background wedding__godparents-section"></div>
+      <!-- <div class="wedding__content-background wedding__gifts-section"></div> -->
     </div>
   </section>`
 );
