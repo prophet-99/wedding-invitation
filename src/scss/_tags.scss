@@ -1,0 +1,17 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: #FEFBF3;
+  font-family: 'Lobster', cursive;
+  font-size: var(--font-size-body);
+}
+
+img{
+  max-width: 80%;
+  height: auto;
+}

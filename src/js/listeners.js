@@ -1,29 +1,37 @@
-export const flipbookResponsiveListener = () => {
+const flipbookResponsiveListener = () => {
   const smallBp = matchMedia('(min-width: 576px)');
   // SET VARIABLES
   const setContentVariable = (mql) => {
-    if (mql.matches){ // GREATHER THAN 576px
+    if (mql.matches) { // GREATHER THAN 576px
       // RESIZE HERO SECTION
       const mainContainer = document.querySelector('.js-main-content').getBoundingClientRect();
       const firstPageRef = document.querySelector('.page-wrapper[page="1"]').getBoundingClientRect();
       document.querySelector(':root').style.setProperty(
-        '--width-hero-section',
-        `${mainContainer.width - firstPageRef.width}px`,
+        '--width-hero-section', `${mainContainer.width - firstPageRef.width}px`,
       );
       // RESIZE FIPBOOK
       const flipbookContentRef = document.querySelector('.js-flipbook-content');
       flipbookContentRef.classList.remove('is-mobile');
       const flipbookSize = flipbookContentRef.getBoundingClientRect();
+      // eslint-disable-next-line no-undef
       $('.flipbook').turn('size', flipbookSize.width, flipbookSize.height);
-    } else{ //LOWER THAN 576px
+    } else { // LOWER THAN 576px
       // RESIZE FIPBOOK
       const flipbookContentRef = document.querySelector('.js-flipbook-content');
       flipbookContentRef.classList.add('is-mobile');
       const flipbookSize = flipbookContentRef.getBoundingClientRect();
+      // eslint-disable-next-line no-undef
       $('.flipbook').turn('size', '200vw', flipbookSize.height);
     }
   };
   setContentVariable(smallBp);
-  smallBp.addEventListener('change', setContentVariable)
+  smallBp.addEventListener('change', setContentVariable);
   window.addEventListener('resize', () => setContentVariable(smallBp));
+};
+
+const mockListener = () => 1;
+
+export {
+  flipbookResponsiveListener,
+  mockListener,
 };
