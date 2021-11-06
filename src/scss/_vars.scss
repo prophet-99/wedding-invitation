@@ -2,6 +2,11 @@
 $breakpoints: (sm: 576px, md: 768px, lg: 992px, xl: 1200px);
 // CSS variables
 :root{
+  // COLORS
+  --backdrop-color: #898989;
+  --backdrop-card-color: #adadad8c;
+  --accent-color: #f9e2c2c2;
+  --neutral-color: #fefbf3;
   --width-hero-section: 1024.5px;
   /** 0.25rem range */
   --font-size-body: .79rem;
