@@ -128,11 +128,11 @@
   }
   // STORE SECTION IN FLIPBOOK
   &__principal-section{
-    background-image: url('./../assets/images/principal/principal-desktop.jpg');
+    background-image: url('./../assets/images/reception/mobile/background.jpg');
     &.is-mobile{
-      background-image: url('./../assets/images/hero-section.jpg');
-      background-color: var(--backdrop-color);
       background-blend-mode: multiply;
+      background-color: var(--backdrop-color);
+      background-image: url('./../assets/images/hero-section.jpg');
     }
   }
   &__reception-section{
@@ -151,15 +151,57 @@
     }
   }
   &__godparents-section{
-    background-image: url('./../assets/images/principal/mobile/background.jpg');
+    &.is-mobile{
+      background-image: url('./../assets/images/godparents/mobile/background.jpg');
+      & > .wedding__content-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  &__gifts-section{
+    &.is-mobile{
+      background-image: url('./../assets/images/gifts/mobile/background.jpg');
+      & > .wedding__content-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .addresses{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    }
   }
   // MOBILE CONTROLS IN FLIPBOOK
-  &__control-left{
-    position: fixed;
-    // transform: translateY(50% - );
-  }
-  &__control-right{
-    position: fixed;
-    // transform: translateY(50% - );
+  &__control{
+    &-thumb{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: var(--backdrop-card-color);
+      &:hover{
+        transform: scale(1.05);
+      }
+    }
+    &-left{
+      position: fixed;
+      top: 50%;
+      left: .5rem;
+      transform: translateY(-50%) rotate(90deg);
+    }
+    &-right{
+      position: fixed;
+      top: 50%;
+      right: .5rem;
+      transform: translateY(-50%) rotate(270deg);
+    }
   }
 }

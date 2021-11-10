@@ -6,7 +6,8 @@ body{
   min-height: 100vh;
   margin: 0;
   overflow: hidden;
-  background: #FEFBF3;
+  background: var(--neutral-color);
+  color: var(--text-color);
   font-family: 'Lobster', cursive;
   font-size: var(--font-size-body);
 }
