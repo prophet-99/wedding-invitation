@@ -12,6 +12,7 @@
   }
   &__content-section{
     flex: 1;
+    overflow: hidden;
   }
   &__count-section{
     display: flex;
@@ -75,14 +76,12 @@
     }
   }
   &__flipbook-section{
+    position: fixed;
+    top: 0;
+    right: 100vw;
     flex: 1;
-    &.is-mobile{
-      position: fixed;
-      top: 0;
-      right: 100vw;
-      width: 100%;
-      height: 100%;
-    }
+    width: 100%;
+    height: 100%;
   }
   &__flipbook-content{
     background-color: var(--neutral-color);
@@ -102,9 +101,14 @@
   }
   &__content-section{
     height: 100%;
-    padding: .5rem;
   }
-  // STORE SECTION IN FLIPBOOK
+  //ADDED PADDING IN MOBILE
+  &__flipbook-section{
+    .wedding__content-section{
+      padding: .5rem;
+    }
+  }
+  // INIT STORE SECTION IN FLIPBOOK
   &__principal-section{
     background-image: url('./../assets/images/reception/mobile/background.jpg');
     &.is-mobile{
@@ -114,7 +118,24 @@
     }
   }
   &__reception-section{
-    background-image: url('./../assets/images/reception/mobile/background.jpg');
+    &.is-desktop{
+      background-image: url('./../assets/images/reception/mobile/background.jpg');
+      height: 100%;
+      img {
+        max-height: 20%;
+        object-fit: cover;
+      }
+      & > .wedding__content-section{
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .bar-code{
+          max-height: 25%;
+        }
+      }
+    }
     &.is-mobile{
       background-image: url('./../assets/images/reception/mobile/background.jpg');
       & > .wedding__content-section{
@@ -123,39 +144,61 @@
         align-items: center;
         justify-content: flex-end;
         .bar-code{
-          width: 180px;
+          width: 160px;
         }
       }
     }
   }
   &__godparents-section{
+    &.is-desktop{
+      background-image: url('./../assets/images/godparents/mobile/background.jpg');
+      height: 100%;
+      img {
+        max-height: 18%;
+        object-fit: cover;
+      }
+    }
     &.is-mobile{
       background-image: url('./../assets/images/godparents/mobile/background.jpg');
-      & > .wedding__content-section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
+    }
+    & > .wedding__content-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
   }
   &__gifts-section{
+    &.is-desktop{
+      background-image: url('./../assets/images/gifts/mobile/background.jpg');
+      height: 100%;
+      img {
+        max-height: 35%;
+        object-fit: cover;
+      }
+    }
     &.is-mobile{
       background-image: url('./../assets/images/gifts/mobile/background.jpg');
-      & > .wedding__content-section{
+    }
+    & > .wedding__content-section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .addresses{
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        .addresses{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
       }
     }
   }
-  // MOBILE CONTROLS IN FLIPBOOK
+  // END STORE SECTION IN FLIPBOOK
+  // INIT CONTROLS FOR NAVIGATION IN FLIPBOOK AND SWIPER
+  %disabled-control-state{
+    opacity: 0.5;
+    transform: none;
+    cursor: default;
+  }
   &__control{
     &-thumb{
       display: flex;
@@ -167,20 +210,35 @@
       background-color: var(--backdrop-card-color);
       transition: transform 0.3s;
       &:hover{
-        transform: scale(1.05);
+        transform: scale(1.10);
       }
     }
     &-left{
+      z-index: 1;
       position: fixed;
       top: 50%;
       left: .5rem;
       transform: translateY(-50%) rotate(90deg);
+      cursor: pointer;
+      &.is-disabled{
+        .wedding__control-thumb{
+          @extend %disabled-control-state;  
+        }
+      }
     }
     &-right{
+      z-index: 1;
       position: fixed;
       top: 50%;
       right: .5rem;
       transform: translateY(-50%) rotate(270deg);
+      cursor: pointer;
+      &.is-disabled{
+        .wedding__control-thumb{
+          @extend %disabled-control-state;
+        }
+      }
     }
   }
 }
+// END CONTROLS FOR NAVIGATION IN FLIPBOOK AND SWIPER
