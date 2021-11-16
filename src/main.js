@@ -13,9 +13,12 @@ const setContentVariable = (mql) => {
     swiperInitializer();
   } else { // LOWER THAN 576px
     document.querySelector('.js-main-content').innerHTML = HTMLMobileTemplate;
-    flipbookInitializer();
-    // RESIZE FIPBOOK
-    mobileListener();
+    setTimeout(() => {
+      flipbookInitializer();
+      // RESIZE FIPBOOK
+      mobileListener();
+    },
+    0);
   }
 };
 setContentVariable(smallBp);
