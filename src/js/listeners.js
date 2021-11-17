@@ -38,7 +38,14 @@ const counterListener = (stringDate = '2040-01-13 15:30:00') => {
   setInterval(processReference, milisecondsInASecond);
 };
 
+const hideLoaderListener = (callback) => {
+  // animate__slow: 1s SPEED TIME
+  document.querySelector('.js-loader').classList.add('animate__fadeOutDown');
+  setTimeout(callback, 500);
+};
+
 export {
   mobileListener,
   counterListener,
+  hideLoaderListener,
 };
