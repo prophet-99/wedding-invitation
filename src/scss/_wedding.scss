@@ -51,8 +51,8 @@
     }
     @include from ('lg'){
       --padding-childs: .5em 1.5rem;
-      width: 130px;
-      height: 130px;
+      width: 115px;
+      height: 115px;
     }
   }
   &__count-section-subitem{
@@ -71,7 +71,8 @@
       width: 100%; 
       padding: var(--padding-childs);
       border-radius: 0 0 .25rem .25rem;
-      background: var(--accent-color);
+      // background: var(--accent-color);
+      background: var(--backdrop-card-color);
       text-align: center;
     }
   }

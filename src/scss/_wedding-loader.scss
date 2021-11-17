@@ -1,0 +1,31 @@
+.wedding-loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--neutral-color);
+  &__item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    padding: 1rem;
+    border: 8px solid var(--primary-color);
+    border-radius: 50%;
+    animation: scale-border 1.5s infinite ease-in-out;
+  }
+}
+
+@keyframes scale-border {
+  0% {
+    border: 8px solid #e0eefb;
+  }
+  50% {
+    border: 16px solid var(--primary-color);
+  }
+  100% {
+    border: 8px solid #e0eefb;
+  }
+}
