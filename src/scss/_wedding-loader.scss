@@ -9,12 +9,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 150px;
-    padding: 1rem;
+    width: 120px;
+    height: 120px;
+    padding: 0.8rem;
     border: 8px solid var(--primary-color);
     border-radius: 50%;
-    animation: scale-border 1.5s infinite ease-in-out;
+    animation: scale-border 1.2s infinite ease-in-out;
+    @include from('sm'){
+      width: 150px;
+      height: 150px;
+      padding: 1rem;
+    }
   }
 }
 
@@ -23,7 +28,7 @@
     border: 8px solid #e0eefb;
   }
   50% {
-    border: 16px solid var(--primary-color);
+    border: 12px solid var(--primary-color);
   }
   100% {
     border: 8px solid #e0eefb;

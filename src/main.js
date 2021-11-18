@@ -13,7 +13,7 @@ const smallBp = matchMedia('(min-width: 576px)');
 const setContentVariable = (mql) => {
   document.querySelector('.js-main-content').innerHTML = HTMLLoaderTemplate;
   if (mql.matches) { // GREATHER THAN 576px
-    // TO SIMULATE LOADING - IN THE FUTURE FUNCTION WITH CALLBACK
+    // TODO: TO SIMULATE LOADING - IN THE FUTURE FUNCTION WITH CALLBACK
     setTimeout(() => {
       hideLoaderListener(() => {
         document.querySelector('.js-main-content').innerHTML = HTMLDesktopTemplate;
@@ -22,14 +22,14 @@ const setContentVariable = (mql) => {
       });
     }, 2000);
   } else { // LOWER THAN 576px
-    // TO SIMULATE LOADING - IN THE FUTURE FUNCTION WITH CALLBACK
+    // TODO: TO SIMULATE LOADING - IN THE FUTURE FUNCTION WITH CALLBACK
     setTimeout(() => {
       hideLoaderListener(() => {
         document.querySelector('.js-main-content').innerHTML = HTMLMobileTemplate;
         flipbookInitializer();
         mobileListener(); // TO RESIZE FIPBOOK
         counterListener('2022-02-05 12:30:00');
-      }, 0);
+      });
     }, 2000);
   }
 };

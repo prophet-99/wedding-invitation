@@ -41,7 +41,7 @@ const counterListener = (stringDate = '2040-01-13 15:30:00') => {
 const hideLoaderListener = (callback) => {
   // animate__slow: 1s SPEED TIME
   document.querySelector('.js-loader').classList.add('animate__fadeOutDown');
-  setTimeout(callback, 500);
+  setTimeout(callback, 300);
 };
 
 export {
