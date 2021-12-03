@@ -131,8 +131,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        .bar-code{
+        .qr-loader {
+          width: 110px;
+          &.is-hidden {
+            display: none;
+          }
+        }
+        .qr-code {
           max-height: 25%;
+          &.is-hidden {
+            display: none;
+          }
         }
       }
     }
@@ -142,9 +151,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
-        .bar-code{
+        justify-content: center;
+        .qr-loader {
+          width: 110px;
+          &.is-hidden {
+            display: none;
+          }
+        }
+        .qr-code {
           width: 160px;
+          &.is-hidden {
+            display: none;
+          }
         }
       }
     }
