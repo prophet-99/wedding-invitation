@@ -143,6 +143,13 @@
             display: none;
           }
         }
+        .qr-passes {
+          margin: 0;
+          font-size: 1.3rem;
+          &.is-hidden {
+            display: none;
+          }
+        }
       }
     }
     &.is-mobile{
@@ -160,6 +167,13 @@
         }
         .qr-code {
           width: 160px;
+          &.is-hidden {
+            display: none;
+          }
+        }
+        .qr-passes {
+          margin: 0;
+          font-size: 1.1rem;
           &.is-hidden {
             display: none;
           }

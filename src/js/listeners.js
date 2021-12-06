@@ -70,9 +70,11 @@ const hideLoaderListener = (callback) => {
 const renderQRCode = (qrCodeRef) => {
   if (qrCodeRef) {
     document.querySelector('.js-qr-code').setAttribute('src', qrCodeRef[0].url);
+    document.querySelector('.js-qr-passes').textContent = `Pases: ${qrCodeRef[0].passes}`;
     setTimeout(() => {
       document.querySelector('.js-qr-loader').classList.add('is-hidden');
       document.querySelector('.js-qr-code').classList.remove('is-hidden');
+      document.querySelector('.js-qr-passes').classList.remove('is-hidden');
     }, 1000);
   } else document.querySelector('.js-qr-loader').classList.add('is-hidden');
 };
